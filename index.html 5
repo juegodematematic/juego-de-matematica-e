@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego Matemático con Sonido</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-image: url('fondo-matematicas.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contenedor {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>¡Juego de Matemáticas!</h1>
+        <button onclick="sonarClic()">Clic</button>
+        <button onclick="sonarGanar()">Ganaste</button>
+    </div>
+
+    <audio id="sonido-clic" src="sonidos/clic.mp3"></audio>
+    <audio id="sonido-ganar" src="sonidos/ganar.mp3"></audio>
+
+    <script>
+        function sonarClic() {
+            document.getElementById('sonido-clic').play();
+        }
+        function sonarGanar() {
+            document.getElementById('sonido-ganar').play();
+        }
+    </script>
+</body>
+</html>
