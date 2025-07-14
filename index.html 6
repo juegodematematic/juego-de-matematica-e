@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Juego Matemático para Android</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('fondo-matematicas.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenedor {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5vw;
+            border-radius: 15px;
+            text-align: center;
+            width: 90vw;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            font-size: 6vw;
+            color: #333;
+            margin-bottom: 5vw;
+        }
+
+        button {
+            width: 100%;
+            padding: 5vw;
+            font-size: 5vw;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            margin-bottom: 5vw;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>¡Juego de Matemáticas!</h1>
+        <button onclick="sonarClic()">Botón de Prueba</button>
+        <button onclick="sonarGanar()">Ganaste</button>
+    </div>
+
+    <audio id="sonido-clic" src="sonidos/clic.mp3"></audio>
+    <audio id="sonido-ganar" src="sonidos/ganar.mp3"></audio>
+
+    <script>
+        function sonarClic() {
+            document.getElementById('sonido-clic').play();
+        }
+
+        function sonarGanar() {
+            document.getElementById('sonido-ganar').play();
+        }
+    </script>
+</body>
+</html>
